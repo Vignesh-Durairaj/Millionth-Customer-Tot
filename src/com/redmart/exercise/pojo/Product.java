@@ -65,4 +65,11 @@ public class Product {
 	public long getVolume() {
 		return this.length * this.width * this.height;
 	}
+
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", price=" + price + ", length=" + length + ", width=" + width
+				+ ", height=" + height + ", weight=" + weight + "]";
+	}
+	
 }

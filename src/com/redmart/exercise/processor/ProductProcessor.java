@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import com.redmart.exercise.pojo.Product;
+import com.redmart.exercise.pojo.Tote;
 
 public class ProductProcessor {
 
@@ -39,4 +40,13 @@ public class ProductProcessor {
 		
 		return productList;
 	} 
+	
+	public List<Product> getFittingProductsList(final List<Product> productList, final Tote tote) {
+		return productList
+				.stream()
+				.filter(prod -> (prod.getLength() <= tote.getLength() && 
+					prod.getWidth() <= tote.getWidth() && 
+					prod.getHeight() <= tote.getHeight()))
+				.collect(Collectors.toList());
+	}
 }

@@ -6,3 +6,15 @@ Just another `Java` based solution for a challenging scenario where a shopping t
 * `Map.txt` has been parsed into a two dimensional array of integer with
   * Heavy use of `Java 8 Streams`
   * Implementation of functional interfaces using `Lambdas` and `Method References`
+
+**Solution Approach**
+---
+1. Used `Java 8 Streams` to parse the input **CSV** file into **List<Products>**
+2. Filter out the products whose dimensions exceeds that of the tote. This is applicable for **Any of the dimensions**
+3. Create a `Map` containing the current tote contents, its net price and weight against it occupied volume
+4. Iterate for each of the product and start fill up the tote and check its current tote content's nett volume is less than that of tote and a similar volumed tote-contents are already there in the map
+   1. If not exists add the map with the new volume and the new tote-contents 
+   2. Else check for the maximum priced tote-content, else for same price, check for the minimal weight and update the map
+5. After iterating for all the contents in the product CSV, get the max priced item in the map.
+ 
+> Look for the simplest and the shortest solution for any problem, rather than complicating it further
